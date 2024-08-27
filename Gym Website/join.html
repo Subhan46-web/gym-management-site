@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Now</title>
+    <link rel="stylesheet" href="join.css">
+</head>
+<body>
+    <script> 
+    function validateform(event){
+        event.preventDefault();
+        const Email=document.getElementById('email').value;
+        const Password=document.getElementById('Password').value;
+        if(Email===""|| Password===""){
+            alert("Invalid Email or Password")
+        }
+        else if(Password.length<6){
+            alert("Password should be 6 or more characters")
+        }
+        else{
+            document.getElementById('JoiningForm').submit();
+        }
+    }
+    </script>
+    <form id="JoiningForm">
+        <div class="login-container">
+            <h2>Membership Plan</h2>
+            <input type="email" id="email" placeholder="Email">
+            <input type="password" id="pass" placeholder="Password">
+            <select id="gym-membership" name="membership">
+                <option value="basic">Basic Membership</option>
+                <option value="standard">Standard Membership</option>
+                <option value="premium">Premium Membership</option>
+                <option value="vip">VIP Membership</option>
+            <input type="submit">  
+        </div>
+    </form>
+</body>
+</html>

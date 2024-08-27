@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML</title>
+    <link rel="stylesheet" href="new.css">
+    <script>
+    function validateform(event){
+        event.preventDefault();
+        const Email=document.getElementById('email').value;
+        const Password=document.getElementById('Password').value;
+        if(Email===""|| Password===""){
+            alert("Invalid Email or Password")
+        }
+        else if(Password.length<6){
+            alert("Password should be 6 or more characters")
+        }
+        else{
+            document.getElementById('LoginForm').submit();
+        }
+    }
+    </script>
+</head>
+<body>
+    <form  id="LoginForm" action="Website.html" class="Login" onsubmit="validateform(event)">
+        <div class="login-container">
+            <h2>Login</h2>
+            <form>
+                <input type="email" placeholder="Email" required id="email">
+                <input type="password" placeholder="Password" required id="Password">
+                <button type="submit">Log In</button>
+                <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+            </form>
+</body>
+</html>

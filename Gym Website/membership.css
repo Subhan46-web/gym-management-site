@@ -1,0 +1,167 @@
+body{
+    background-color: black;
+    overflow-x: hidden;
+    background-image: url(img/34.avif);
+    background-size: cover;
+    
+}
+.basic{
+    background-color: rgb(154, 204, 247);
+    border-radius: 20px;
+    padding-bottom: 10px;
+    background-color: #3498db;
+    color: white;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    position: relative;
+    box-shadow: 0 8px 15px rgba(236, 112, 112, 0.2);
+    border-radius: 8px;
+}
+.basic:hover{
+    transform: translateY(-20px);
+    box-shadow: 0 8px 15px rgba(19, 222, 240, 0.445)
+}
+.basic p{
+    font-size: large;
+}
+h1{
+    padding-top: 10px;
+}
+.basic p, h1, h2{
+    padding-left: 10px;
+}
+.standard{
+    background-color: rgb(82, 228, 104);
+    border-radius: 20px;
+    padding-bottom: 10px;
+    color: white;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    position: relative;
+    box-shadow: 0 8px 15px rgba(236, 112, 112, 0.2);
+    border-radius: 8px;
+}
+.standard:hover{
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: 0 15px 30px rgba(143, 245, 54, 0.3);
+}
+.standard p{
+    font-size: large;
+}
+.standard p, h1, h2{
+    padding-left: 10px;
+}
+.premium{
+    background-color: rgb(248, 167, 95);
+    border-radius: 20px;
+    padding-bottom: 10px;
+    color: white;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    position: relative;
+    box-shadow: 0 8px 15px rgba(188, 222, 18, 0.2);
+    border-radius: 8px;
+}
+.premium:hover{
+    transform: translateY(-20px) scale(1.01);
+    box-shadow: 0 15px 30px rgba(245, 225, 9, 0.3);
+}
+.premium p{
+    font-size: large;
+}
+.premium p, h1, h2{
+    padding-left: 10px;
+}
+.vip{
+    background-color: rgb(223, 104, 236);
+    border-radius: 20px;
+    padding-bottom: 10px;
+    color: white;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    position: relative;
+    box-shadow: 0 8px 15px rgba(222, 18, 137, 0.2);
+    border-radius: 8px;
+}
+.vip:hover{
+    transform: translateY(-20px);
+    box-shadow: 0 15px 30px rgba(245, 9, 210, 0.3);
+}
+.vip p{
+    font-size: large;
+}
+.vip p, h1, h2{
+    padding-left: 10px;
+}
+.taskbar{
+    background-color: lightgrey;
+    width: 100%;
+    margin-top: -10px;
+    margin-left: -10px;
+    padding: 5px 10px;
+    justify-content: end;
+}
+.tb{
+    display: inline-block;
+    padding: 15px 20px;
+    color: black;
+    font-size: large;
+    font-weight: bold;
+    margin-left: 80px;
+    cursor: pointer;
+}
+.tb a{
+    text-decoration: none;
+    color: black;
+}
+.tb1{
+    display: inline-block;
+    padding: 15px 50px;
+}
+.tb1 img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+.tb3{
+    display: inline-block;
+    padding: 10px 20px;
+    color: black;
+    font-size: large;
+    font-weight: bold;
+    margin-left: 160px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: rgb(171, 187, 227);
+    cursor: pointer;
+}
+.tb3:hover{
+    background-color: rgb(81, 68, 68);
+    color: white;
+}
+.tb5{
+    background: transparent; 
+    border: none;            
+    color: inherit;         
+    padding: 0;              
+    cursor: pointer;        
+    font-size: inherit;    
+}
+.tb3 a{
+    text-decoration: none;
+}
+.tb4{
+    display: inline-block;
+    padding: 10px 20px;
+    color: black;
+    font-size: large;
+    font-weight: bold;
+    margin-left: 30px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: rgb(158, 212, 178);
+    cursor: pointer;
+}
+.tb4 a{
+    text-decoration: none;
+}
+.tb4:hover{
+    background-color: rgb(23, 48, 74);
+    color: white;
+}

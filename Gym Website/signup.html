@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <form id="signupForm">
+        <div class="signup-container">
+            <h2>Sign Up</h2>
+                <div class="error" id="errorMsg"></div>
+                <input type="text" placeholder="First Name" required id="FirstName">
+                <input type="text" placeholder="Last Name" required id="LastName">
+                <input type="email" placeholder="Email Address" required id="Email">
+                <input type="password" placeholder="Password" required id="Password">
+                <input type="password" placeholder="Confirm Password" required id="ConfirmPassword">
+                <button type="submit">Create Account</button>
+                <p>Already have an account? <a href="new.html">Log In</a></p>
+            </form>
+            <script>
+                document.getElementById('signupForm').addEventListener('submit', function(event) {
+                    event.preventDefault(); 
+                    const errorMsg = document.getElementById('errorMsg');
+                    const FirstName = document.getElementById('FirstName').value.trim();
+                    const LastName = document.getElementById('LastName').value.trim();
+                    const email = document.getElementById('Email').value.trim();
+                    const password = document.getElementById('Password').value.trim();
+                    const confirmPassword = document.getElementById('ConfirmPassword').value.trim();
+        
+                    errorMsg.style.display = 'none';
+                    errorMsg.innerHTML = '';
+        
+                    if (FirstName === '' || LastName==='' || email === '' || password === '' || confirmPassword === '') {
+                        errorMsg.style.display = 'block';
+                        errorMsg.innerHTML = 'All fields are required.';
+                        return;
+                    }
+        
+                    // Email validation
+                    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+                    if (!emailPattern.test(email)) {
+                        errorMsg.style.display = 'block';
+                        errorMsg.innerHTML = 'Please enter a valid email address.';
+                        return;
+                    }
+        
+                    // Password length check
+                    if (password.length < 8) {
+                        errorMsg.style.display = 'block';
+                        errorMsg.innerHTML = 'Password must be at least 8 characters long.';
+                        return;
+                    }
+        
+                    // Password match check
+                    if (password !== confirmPassword) {
+                        errorMsg.style.display = 'block';
+                        errorMsg.innerHTML = 'Passwords do not match.';
+                        return;
+                    }
+        
+                    // Submit form if all validations pass
+                    this.submit();
+                });
+            </script>
+</body>
+</html>
