@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Phoenix Fitness</title>
+    <link rel="stylesheet" href="../assets/css/portal.css">
+</head>
+<body>
+    <main class="portal-page">
+        <section class="portal-card">
+            <p class="portal-kicker">Member Portal</p>
+            <h1>Welcome back.</h1>
+            <p class="portal-copy">Log in to review your plan, book sessions, and track your progress.</p>
+            <form id="login-form" class="portal-form">
+                <label for="login-email">Email</label>
+                <input id="login-email" type="email" placeholder="you@example.com" required>
+
+                <label for="login-password">Password</label>
+                <input id="login-password" type="password" placeholder="Minimum 6 characters" minlength="6" required>
+
+                <button type="submit">Log In</button>
+                <p class="portal-feedback" id="login-feedback" aria-live="polite"></p>
+            </form>
+            <p class="portal-switch">Need an account? <a href="signup.html">Create one here</a>.</p>
+        </section>
+    </main>
+    <script>
+        const loginForm = document.getElementById("login-form");
+        const loginFeedback = document.getElementById("login-feedback");
+
+        loginForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            loginFeedback.textContent = "Login demo successful. Your dashboard would open here in the full product.";
+            loginForm.reset();
+        });
+    </script>
+</body>
+</html>

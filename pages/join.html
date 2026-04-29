@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Phoenix Fitness</title>
+    <link rel="stylesheet" href="../assets/css/portal.css">
+</head>
+<body>
+    <main class="portal-page">
+        <section class="portal-card">
+            <p class="portal-kicker">Free Trial</p>
+            <h1>Book your first visit.</h1>
+            <p class="portal-copy">Choose a plan, share your goal, and we'll prepare a first-session experience that fits.</p>
+            <form id="join-form" class="portal-form">
+                <label for="join-name">Full Name</label>
+                <input id="join-name" type="text" placeholder="Your full name" required>
+
+                <label for="join-email">Email</label>
+                <input id="join-email" type="email" placeholder="you@example.com" required>
+
+                <label for="join-plan">Preferred Plan</label>
+                <select id="join-plan" required>
+                    <option value="">Choose a membership</option>
+                    <option value="starter">Starter</option>
+                    <option value="momentum">Momentum</option>
+                    <option value="elite">Elite</option>
+                </select>
+
+                <label for="join-goal">Primary Goal</label>
+                <input id="join-goal" type="text" placeholder="Strength, weight loss, mobility..." required>
+
+                <button type="submit">Reserve My Trial</button>
+                <p class="portal-feedback" id="join-feedback" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+    <script>
+        const joinForm = document.getElementById("join-form");
+        const joinFeedback = document.getElementById("join-feedback");
+
+        joinForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            const plan = document.getElementById("join-plan").value;
+
+            if (!plan) {
+                joinFeedback.textContent = "Please choose a membership so we can tailor your visit.";
+                return;
+            }
+
+            joinFeedback.textContent = "Trial reserved in demo mode. A coach would normally confirm your time by email.";
+            joinForm.reset();
+        });
+    </script>
+</body>
+</html>

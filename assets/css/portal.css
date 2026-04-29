@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;700&display=swap");
+
+:root {
+    --text: #f7f3ea;
+    --muted: #b6b8b0;
+    --line: rgba(255, 255, 255, 0.12);
+    --accent: #ff8f3f;
+    --accent-soft: #ffc28f;
+    --mint: #9de0d0;
+    --panel: rgba(9, 18, 22, 0.82);
+    --shadow: 0 22px 60px rgba(0, 0, 0, 0.28);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background:
+        linear-gradient(145deg, rgba(6, 12, 14, 0.9), rgba(6, 12, 14, 0.58)),
+        url("../images/44.jpg") center/cover;
+    color: var(--text);
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.portal-page {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0.75rem;
+}
+
+.portal-card {
+    width: min(100%, 470px);
+    padding: 1.55rem;
+    border: 1px solid var(--line);
+    border-radius: 2rem;
+    background: var(--panel);
+    backdrop-filter: blur(16px);
+    box-shadow: var(--shadow);
+}
+
+.portal-kicker {
+    margin: 0 0 0.9rem;
+    color: var(--accent-soft);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.portal-card h1 {
+    margin: 0;
+    font-family: "Instrument Serif", serif;
+    font-size: 2.65rem;
+    font-weight: 400;
+    line-height: 0.95;
+}
+
+.portal-copy,
+.portal-switch {
+    color: var(--muted);
+    line-height: 1.75;
+}
+
+.portal-form {
+    margin-top: 1rem;
+}
+
+.portal-form label {
+    display: block;
+    margin: 0.7rem 0 0.35rem;
+    color: var(--accent-soft);
+    font-size: 0.92rem;
+}
+
+.portal-form input,
+.portal-form select {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text);
+    appearance: none;
+}
+
+.portal-form select option {
+    background: #0b1519;
+    color: var(--text);
+}
+
+.portal-form button {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.95rem 1.2rem;
+    border: none;
+    border-radius: 999px;
+    background: var(--accent);
+    color: #17100b;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.portal-feedback {
+    min-height: 1.4rem;
+    margin: 0.7rem 0 0;
+    color: var(--mint);
+}
+
+.portal-switch {
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.portal-switch a {
+    color: var(--text);
+}

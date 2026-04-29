@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | Phoenix Fitness</title>
+    <link rel="stylesheet" href="../assets/css/portal.css">
+</head>
+<body>
+    <main class="portal-page">
+        <section class="portal-card">
+            <p class="portal-kicker">Start Strong</p>
+            <h1>Create your account.</h1>
+            <p class="portal-copy">Tell us a little about you and we'll help match you to the right starting path.</p>
+            <form id="signup-form" class="portal-form">
+                <label for="first-name">First Name</label>
+                <input id="first-name" type="text" placeholder="First name" required>
+
+                <label for="last-name">Last Name</label>
+                <input id="last-name" type="text" placeholder="Last name" required>
+
+                <label for="signup-email">Email</label>
+                <input id="signup-email" type="email" placeholder="you@example.com" required>
+
+                <label for="signup-password">Password</label>
+                <input id="signup-password" type="password" placeholder="Minimum 8 characters" minlength="8" required>
+
+                <label for="confirm-password">Confirm Password</label>
+                <input id="confirm-password" type="password" placeholder="Repeat password" minlength="8" required>
+
+                <button type="submit">Create Account</button>
+                <p class="portal-feedback" id="signup-feedback" aria-live="polite"></p>
+            </form>
+            <p class="portal-switch">Already a member? <a href="login.html">Log in here</a>.</p>
+        </section>
+    </main>
+    <script>
+        const signupForm = document.getElementById("signup-form");
+        const signupFeedback = document.getElementById("signup-feedback");
+
+        signupForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            const password = document.getElementById("signup-password").value;
+            const confirmPassword = document.getElementById("confirm-password").value;
+
+            if (password !== confirmPassword) {
+                signupFeedback.textContent = "Passwords do not match yet. Please check both fields.";
+                return;
+            }
+
+            signupFeedback.textContent = "Account created in demo mode. Next step would be your onboarding questionnaire.";
+            signupForm.reset();
+        });
+    </script>
+</body>
+</html>

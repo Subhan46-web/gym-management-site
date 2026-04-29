@@ -1,0 +1,311 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;700&display=swap");
+
+:root {
+    --bg: #071114;
+    --panel: rgba(12, 24, 29, 0.78);
+    --line: rgba(255, 255, 255, 0.1);
+    --text: #f7f3ea;
+    --muted: #b6b8b0;
+    --accent: #ff8f3f;
+    --accent-soft: #ffc28f;
+    --mint: #9de0d0;
+    --shadow: 0 22px 60px rgba(0, 0, 0, 0.28);
+    --shadow-soft: 0 18px 40px rgba(255, 143, 63, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: var(--text);
+    background:
+        radial-gradient(circle at top left, rgba(255, 143, 63, 0.13), transparent 28%),
+        linear-gradient(180deg, #071114 0%, #0d161a 100%);
+    font-family: "Space Grotesk", sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.membership-shell {
+    min-height: 100vh;
+}
+
+.membership-hero,
+.membership-main {
+    padding-left: clamp(1.2rem, 4vw, 4rem);
+    padding-right: clamp(1.2rem, 4vw, 4rem);
+}
+
+.membership-hero {
+    padding-top: 1.2rem;
+    padding-bottom: 3.5rem;
+    background:
+        linear-gradient(120deg, rgba(5, 11, 13, 0.9), rgba(5, 11, 13, 0.45)),
+        url("../images/phoenix-strength-generated.png") center/cover;
+}
+
+.membership-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.9rem 1.1rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(8, 17, 20, 0.72);
+    backdrop-filter: blur(16px);
+}
+
+.membership-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.membership-brand img {
+    width: 190px;
+    height: 52px;
+    object-fit: contain;
+}
+
+.membership-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.membership-links a {
+    color: var(--muted);
+}
+
+.membership-hero-copy {
+    max-width: 54rem;
+    padding-top: clamp(2.2rem, 6vw, 4.6rem);
+}
+
+.membership-kicker,
+.tier-name {
+    margin: 0 0 0.9rem;
+    color: var(--accent-soft);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.membership-hero-copy h1,
+.membership-story-copy h2 {
+    margin: 0;
+    font-family: "Instrument Serif", serif;
+    font-weight: 400;
+    line-height: 0.93;
+}
+
+.membership-hero-copy h1 {
+    font-size: clamp(3.6rem, 9vw, 7rem);
+    max-width: 10.5ch;
+}
+
+.membership-hero-copy p,
+.membership-story-copy p,
+.tier-copy,
+.tier-card li,
+.benefits-grid p {
+    color: var(--muted);
+    line-height: 1.75;
+}
+
+.membership-main {
+    padding-top: 0;
+    padding-bottom: 3.5rem;
+}
+
+.tier-grid,
+.benefits-grid {
+    display: grid;
+    gap: 1.2rem;
+}
+
+.tier-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: -1.3rem;
+}
+
+.tier-card,
+.benefits-grid article,
+.compare-table {
+    border: 1px solid var(--line);
+    border-radius: 2rem;
+    background: var(--panel);
+    box-shadow: var(--shadow);
+}
+
+.tier-card,
+.benefits-grid article {
+    padding: 1.8rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.tier-card:hover,
+.benefits-grid article:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: var(--shadow-soft);
+}
+
+.tier-card h2 {
+    margin: 0;
+    font-size: 3.2rem;
+    font-family: "Instrument Serif", serif;
+    font-weight: 400;
+}
+
+.tier-card h2 span {
+    font-size: 1rem;
+    color: var(--muted);
+}
+
+.tier-copy {
+    margin: 0.8rem 0 1rem;
+}
+
+.tier-card ul {
+    margin: 1rem 0 0;
+    padding-left: 1.1rem;
+}
+
+.featured-tier {
+    background:
+        linear-gradient(160deg, rgba(255, 143, 63, 0.24), rgba(10, 22, 27, 0.95)),
+        rgba(10, 22, 27, 0.92);
+    transform: translateY(-10px);
+}
+
+.membership-story,
+.compare-section {
+    padding-top: 3rem;
+}
+
+.membership-story {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.membership-story-copy h2 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+}
+
+.benefits-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.compare-table {
+    overflow: hidden;
+}
+
+.compare-row {
+    display: grid;
+    grid-template-columns: 1.3fr repeat(3, 1fr);
+}
+
+.compare-row span {
+    padding: 1rem 1.2rem;
+    color: var(--muted);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.compare-head span {
+    color: var(--text);
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+@media (max-width: 1024px) {
+    .tier-grid,
+    .benefits-grid,
+    .membership-story {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-tier {
+        transform: none;
+    }
+}
+
+@media (max-width: 760px) {
+    .membership-hero,
+    .membership-main {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .membership-nav,
+    .membership-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .membership-hero {
+        padding-bottom: 2.5rem;
+    }
+
+    .membership-hero-copy {
+        padding-top: 1.8rem;
+    }
+
+    .membership-story,
+    .compare-section {
+        padding-top: 2.2rem;
+    }
+
+    .compare-row {
+        grid-template-columns: 1fr;
+    }
+
+    .compare-row span {
+        border-bottom: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .compare-head span:first-child {
+        border-top: none;
+    }
+}
+
+@media (max-width: 520px) {
+    .membership-brand img {
+        width: 156px;
+        height: 44px;
+    }
+
+    .membership-hero-copy h1 {
+        max-width: none;
+        font-size: clamp(3rem, 15vw, 4.8rem);
+    }
+
+    .tier-card,
+    .benefits-grid article {
+        padding: 1.3rem;
+    }
+
+    .tier-card h2 {
+        font-size: 2.7rem;
+    }
+
+    .tier-grid .tier-card:first-child,
+    .tier-grid .tier-card:last-child,
+    .membership-story,
+    .compare-section {
+        display: none;
+    }
+}
