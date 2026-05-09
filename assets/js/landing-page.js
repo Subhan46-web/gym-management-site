@@ -8,9 +8,18 @@ const modalFrames = document.querySelectorAll(".modal iframe");
 const contactForm = document.getElementById("contact-form");
 const contactFeedback = document.getElementById("contact-feedback");
 const counters = document.querySelectorAll("[data-count]");
+const membershipCarousel = document.querySelector("[data-plan-carousel]");
+const membershipTrack = membershipCarousel?.querySelector(".membership-grid");
+const membershipCards = membershipTrack ? Array.from(membershipTrack.querySelectorAll(".plan-card")) : [];
+const membershipPrev = membershipCarousel?.querySelector("[data-plan-prev]");
+const membershipNext = membershipCarousel?.querySelector("[data-plan-next]");
+const membershipStatus = membershipCarousel?.querySelector("[data-plan-status]");
+const scheduleCards = Array.from(document.querySelectorAll(".schedule-card"));
+const scrollLinks = Array.from(document.querySelectorAll("[data-scroll-target]"));
 const revealTargets = document.querySelectorAll(
     ".method-card, .hero-card, .schedule-grid article, .plan-card, .spaces-copy, .spaces-media, .visit-copy, .contact-form"
 );
+let membershipIndex = 0;
 
 if (menuToggle && navbar) {
     menuToggle.addEventListener("click", () => {
@@ -25,6 +34,24 @@ navLinks.forEach((link) => {
             navbar.classList.remove("menu-open");
             menuToggle?.setAttribute("aria-expanded", "false");
         }
+    });
+});
+
+scrollLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+        const targetId = link.getAttribute("data-scroll-target");
+        if (!targetId) {
+            return;
+        }
+
+        const target = document.getElementById(targetId);
+        if (!target) {
+            return;
+        }
+
+        event.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        window.history.replaceState(null, "", `#${targetId}`);
     });
 });
 
@@ -97,6 +124,39 @@ if (contactForm && contactFeedback) {
     });
 }
 
+function collapseScheduleCards(activeCard = null) {
+    scheduleCards.forEach((card) => {
+        const isActive = card === activeCard;
+        card.classList.toggle("is-expanded", isActive);
+        card.setAttribute("aria-expanded", String(isActive));
+    });
+}
+
+scheduleCards.forEach((card) => {
+    card.addEventListener("click", () => {
+        const shouldExpand = !card.classList.contains("is-expanded");
+        collapseScheduleCards(shouldExpand ? card : null);
+    });
+
+    card.addEventListener("keydown", (event) => {
+        if (event.key !== "Enter" && event.key !== " ") {
+            return;
+        }
+
+        event.preventDefault();
+        const shouldExpand = !card.classList.contains("is-expanded");
+        collapseScheduleCards(shouldExpand ? card : null);
+    });
+});
+
+document.addEventListener("click", (event) => {
+    if (!(event.target instanceof Element) || event.target.closest(".schedule-card")) {
+        return;
+    }
+
+    collapseScheduleCards();
+});
+
 function setActiveLink() {
     const current = window.scrollY + window.innerHeight * 0.35;
 
@@ -160,6 +220,72 @@ const observer = new IntersectionObserver(
 revealTargets.forEach((target) => observer.observe(target));
 counters.forEach((counter) => observer.observe(counter));
 
+function updateMembershipCarousel() {
+    if (!membershipTrack || membershipCards.length === 0) {
+        return;
+    }
+
+    const isMobile = window.innerWidth <= 760;
+
+    if (!isMobile) {
+        membershipTrack.scrollLeft = 0;
+        membershipCards.forEach((card) => {
+            card.setAttribute("aria-hidden", "false");
+        });
+        if (membershipStatus) {
+            membershipStatus.textContent = `Plan 1 of ${membershipCards.length}`;
+        }
+        if (membershipPrev) {
+            membershipPrev.disabled = false;
+        }
+        if (membershipNext) {
+            membershipNext.disabled = false;
+        }
+        membershipIndex = 0;
+        return;
+    }
+
+    membershipIndex = Math.max(0, Math.min(membershipIndex, membershipCards.length - 1));
+    membershipTrack.scrollTo({
+        left: membershipIndex * membershipTrack.clientWidth,
+        behavior: "smooth"
+    });
+
+    membershipCards.forEach((card, index) => {
+        card.setAttribute("aria-hidden", String(index !== membershipIndex));
+    });
+
+    if (membershipStatus) {
+        membershipStatus.textContent = `Plan ${membershipIndex + 1} of ${membershipCards.length}`;
+    }
+
+    if (membershipPrev) {
+        membershipPrev.disabled = membershipIndex === 0;
+    }
+
+    if (membershipNext) {
+        membershipNext.disabled = membershipIndex === membershipCards.length - 1;
+    }
+}
+
+if (membershipTrack && membershipCards.length > 0) {
+    membershipPrev?.addEventListener("click", () => {
+        if (membershipIndex > 0) {
+            membershipIndex -= 1;
+            updateMembershipCarousel();
+        }
+    });
+
+    membershipNext?.addEventListener("click", () => {
+        if (membershipIndex < membershipCards.length - 1) {
+            membershipIndex += 1;
+            updateMembershipCarousel();
+        }
+    });
+
+    updateMembershipCarousel();
+}
+
 window.addEventListener("scroll", () => {
     setActiveLink();
 
@@ -175,4 +301,5 @@ window.addEventListener("scroll", () => {
 setActiveLink();
 window.addEventListener("resize", () => {
     modalFrames.forEach((frame) => resizeModalFrame(frame));
+    updateMembershipCarousel();
 });

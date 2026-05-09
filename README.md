@@ -1,63 +1,74 @@
 # Phoenix Fitness Website
 
-A modern static gym website for **Phoenix Fitness** with a premium visual direction, responsive layout, and supporting membership/auth pages.
+A modern static one-page gym website for **Phoenix Fitness** with a premium visual direction, responsive layout, a built-in membership section, and supporting auth pages.
 
 ## Preview
 
-![Project Screenshot](assets/images/ScreenShots/ss1.png)
-![Project Screenshot](assets/images/ScreenShots/ss2.png)
-![Project Screenshot](assets/images/ScreenShots/ss3.png)
-![Project Screenshot](assets/images/ScreenShots/ss4.png)
-![Project Screenshot](assets/images/ScreenShots/ss5.png)
-![Project Screenshot](assets/images/ScreenShots/ss6.png)
-![Project Screenshot](assets/images/ScreenShots/ss7.png)
-![Project Screenshot](assets/images/ScreenShots/ss8.png)
+   ### Desktop View
+![Project Screenshot](./assets/images/ScreenShots/Desktop1.png)
+![Project Screenshot](./assets/images/ScreenShots/Desktop2.png)
+![Project Screenshot](./assets/images/ScreenShots/Desktop3.png)
+![Project Screenshot](./assets/images/ScreenShots/Desktop4.png)
+![Project Screenshot](./assets/images/ScreenShots/Desktop5.png)
+![Project Screenshot](./assets/images/ScreenShots/Desktop6.png)
+![Project Screenshot](./assets/images/ScreenShots/Desktop7.png)
+![Project Screenshot](./assets/images/ScreenShots/Desktop8.png)
 
+   ### Tablet View
+![Project Screenshot](./assets/images/ScreenShots/Tablet1.png)
+![Project Screenshot](./assets/images/ScreenShots/Tablet2.png)
+![Project Screenshot](./assets/images/ScreenShots/Tablet3.png)
+![Project Screenshot](./assets/images/ScreenShots/Tablet4.png)
 
+   ### Mobile View
+![Project Screenshot](./assets/images/ScreenShots/Mobile1.png)
+![Project Screenshot](./assets/images/ScreenShots/Mobile2.png)
+![Project Screenshot](./assets/images/ScreenShots/Mobile3.png)
+![Project Screenshot](./assets/images/ScreenShots/Mobile4.png)
 
 ## Project Structure
 
-```
+```text
 gym-management-site/
 |-- index.html
 |-- README.md
 |-- assets/
 |   |-- css/
+|   |   |-- landing-page.css
+|   |   `-- auth-modals.css
 |   |-- images/
 |   `-- js/
+|       `-- landing-page.js
 `-- pages/
+    |-- member-login-modal.html
+    |-- member-signup-modal.html
+    `-- trial-booking-modal.html
 ```
 
 ## Main Files
 
 - `index.html`
-  Main landing page of the website.
+  Main landing page of the website, including membership and modal entry points.
 
-- `pages/membership.html`
-  Membership details page.
-
-- `pages/login.html`
+- `pages/member-login-modal.html`
   Login form page used inside the modal.
 
-- `pages/signup.html`
+- `pages/member-signup-modal.html`
   Signup form page used inside the modal.
 
-- `pages/join.html`
+- `pages/trial-booking-modal.html`
   Free trial / join form used inside the modal.
 
 ## Assets
 
-- `assets/css/main.css`
+- `assets/css/landing-page.css`
   Main styling for the homepage.
 
-- `assets/css/membership.css`
-  Styling for the membership page.
-
-- `assets/css/portal.css`
+- `assets/css/auth-modals.css`
   Styling for login, signup, and join pages.
 
-- `assets/js/main.js`
-  Navigation, modal, and form interaction logic.
+- `assets/js/landing-page.js`
+  Navigation, smooth scrolling, modal, membership carousel, and form interaction logic.
 
 - `assets/images/`
   Image assets used across the site, including generated premium visuals and the logo.
@@ -77,11 +88,12 @@ The site is built around:
 - modern editorial typography
 - responsive sections and clean spacing
 - minimal but polished interaction
+- mobile-friendly membership carousel and plan browsing
 
 ## Notes
 
-- The homepage is the main entry point.
-- Secondary pages are grouped under `pages/` to keep the root clean.
+- The homepage is the main entry point and includes the membership section.
+- Supporting modal pages are grouped under `pages/` and loaded into the homepage modals as needed.
 - Styling and scripts are separated into `assets/` for easier maintenance.
 
 ## Author

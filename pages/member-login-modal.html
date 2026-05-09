@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Phoenix Fitness</title>
-    <link rel="stylesheet" href="../assets/css/portal.css">
+    <link rel="stylesheet" href="../assets/css/auth-modals.css">
 </head>
 <body>
     <main class="portal-page">
         <section class="portal-card">
+            <button class="portal-close" type="button" aria-label="Close form">&times;</button>
             <p class="portal-kicker">Member Portal</p>
             <h1>Welcome back.</h1>
             <p class="portal-copy">Log in to review your plan, book sessions, and track your progress.</p>
@@ -22,12 +23,22 @@
                 <button type="submit">Log In</button>
                 <p class="portal-feedback" id="login-feedback" aria-live="polite"></p>
             </form>
-            <p class="portal-switch">Need an account? <a href="signup.html">Create one here</a>.</p>
+            <p class="portal-switch">Need an account? <a href="member-signup-modal.html">Create one here</a>.</p>
         </section>
     </main>
     <script>
+        const closeButton = document.querySelector(".portal-close");
         const loginForm = document.getElementById("login-form");
         const loginFeedback = document.getElementById("login-feedback");
+
+        closeButton.addEventListener("click", () => {
+            const modal = window.frameElement ? window.frameElement.closest(".modal") : null;
+
+            if (modal) {
+                modal.classList.remove("is-open");
+                modal.setAttribute("aria-hidden", "true");
+            }
+        });
 
         loginForm.addEventListener("submit", (event) => {
             event.preventDefault();

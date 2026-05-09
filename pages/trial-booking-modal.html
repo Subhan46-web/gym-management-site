@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Join Phoenix Fitness</title>
-    <link rel="stylesheet" href="../assets/css/portal.css">
+    <link rel="stylesheet" href="../assets/css/auth-modals.css">
 </head>
 <body>
     <main class="portal-page">
         <section class="portal-card">
+            <button class="portal-close" type="button" aria-label="Close form">&times;</button>
             <p class="portal-kicker">Free Trial</p>
             <h1>Book your first visit.</h1>
             <p class="portal-copy">Choose a plan, share your goal, and we'll prepare a first-session experience that fits.</p>
@@ -36,8 +37,18 @@
         </section>
     </main>
     <script>
+        const closeButton = document.querySelector(".portal-close");
         const joinForm = document.getElementById("join-form");
         const joinFeedback = document.getElementById("join-feedback");
+
+        closeButton.addEventListener("click", () => {
+            const modal = window.frameElement ? window.frameElement.closest(".modal") : null;
+
+            if (modal) {
+                modal.classList.remove("is-open");
+                modal.setAttribute("aria-hidden", "true");
+            }
+        });
 
         joinForm.addEventListener("submit", (event) => {
             event.preventDefault();

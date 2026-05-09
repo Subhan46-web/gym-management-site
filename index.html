@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phoenix Fitness | Future-Ready Training</title>
     <meta name="description" content="Phoenix Fitness is a high-design performance gym focused on strength, coaching, recovery, and consistent progress.">
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/landing-page.css">
 </head>
 <body>
     <div class="page-shell">
@@ -36,7 +36,7 @@
                     </p>
                     <div class="hero-actions">
                         <button class="primary-cta" type="button" data-modal-target="join-popup">Claim Your First Session</button>
-                        <a class="ghost-cta" href="pages/membership.html">Explore Plans</a>
+                        <a class="ghost-cta" href="#membership" data-scroll-target="membership">Explore Plans</a>
                     </div>
                     <div class="hero-proof">
                         <article>
@@ -53,28 +53,6 @@
                         </article>
                     </div>
                 </div>
-
-                <div class="hero-visual">
-                    <article class="hero-card hero-card-image">
-                        <div class="hero-card-copy">
-                            <p class="card-kicker">Featured Track</p>
-                            <h2>Build strength, look sharper, move cleaner.</h2>
-                            <p>Weekly programming with coached lifts, metabolic finishers, and recovery sequencing.</p>
-                        </div>
-                    </article>
-                    <div class="hero-sidecards">
-                        <article class="hero-card">
-                            <p class="card-kicker">Peak Hour</p>
-                            <h3>Never overcrowded</h3>
-                            <p>Structured booking and better floor planning keep the room focused.</p>
-                        </article>
-                        <article class="hero-card mint-card">
-                            <p class="card-kicker">Recovery Layer</p>
-                            <h3>Sauna, mobility, reset</h3>
-                            <p>Because modern performance is not just harder work. It is smarter recovery.</p>
-                        </article>
-                    </div>
-                </div>
             </div>
         </header>
 
@@ -86,19 +64,25 @@
                 </div>
                 <div class="method-grid">
                     <article class="method-card">
-                        <span>01</span>
-                        <h3>Precision onboarding</h3>
-                        <p>You start with a real direction, not random machines and vague motivation.</p>
+                        <span class="method-number">01</span>
+                        <div class="method-body">
+                            <h3>Precision onboarding</h3>
+                            <p>You start with a real direction, not random machines and vague motivation.</p>
+                        </div>
                     </article>
                     <article class="method-card">
-                        <span>02</span>
-                        <h3>Progressive coaching</h3>
-                        <p>Your training gets refined as your body changes, your schedule shifts, and your goals sharpen.</p>
+                        <span class="method-number">02</span>
+                        <div class="method-body">
+                            <h3>Progressive coaching</h3>
+                            <p>Your training gets refined as your body changes, your schedule shifts, and your goals sharpen.</p>
+                        </div>
                     </article>
                     <article class="method-card">
-                        <span>03</span>
-                        <h3>Recovery built in</h3>
-                        <p>The space encourages consistency by balancing intensity with mobility, breathwork, and recovery rituals.</p>
+                        <span class="method-number">03</span>
+                        <div class="method-body">
+                            <h3>Recovery built in</h3>
+                            <p>The space encourages consistency by balancing intensity with mobility, breathwork, and recovery rituals.</p>
+                        </div>
                     </article>
                 </div>
             </section>
@@ -107,36 +91,41 @@
                 <div class="spaces-copy">
                     <p class="eyebrow">Designed To Feel Different</p>
                     <h2>Minimal, dramatic, and built for focus.</h2>
-                    <p>
-                        Phoenix is laid out like a premium club, not a cluttered warehouse. Every zone has a clear purpose:
-                        heavy strength, athletic conditioning, guided classes, and a quieter recovery layer that slows the whole experience down in the best way.
+                    <p class="spaces-intro">
+                        Phoenix is planned like a premium training club, with every zone serving a clear function and every transition feeling intentional.
                     </p>
+                    <p class="space-subline">Clear sightlines, sharper movement, and a calmer training rhythm from first set to final reset.</p>
                     <div class="space-points">
                         <article>
+                            <span>01</span>
                             <h3>Strength Floor</h3>
-                            <p>Low-distraction stations for serious lifting and measurable progression.</p>
                         </article>
                         <article>
+                            <span>02</span>
                             <h3>Conditioning Bay</h3>
-                            <p>Sleds, ropes, explosive circuits, and high-output class formats.</p>
                         </article>
                         <article>
+                            <span>03</span>
                             <h3>Recovery Suite</h3>
-                            <p>Mobility tools, stretch zones, and post-session decompression.</p>
                         </article>
                     </div>
                 </div>
                 <div class="spaces-media">
-                    <article class="media-tall">
+                    <article class="media-tall space-gallery-main">
                         <img src="assets/images/phoenix-strength-generated.png" alt="Premium strength zone at Phoenix Fitness">
                     </article>
-                    <article class="media-short">
-                        <img src="assets/images/phoenix-recovery-generated.png" alt="Luxury recovery suite at Phoenix Fitness">
-                    </article>
-                    <article class="media-short stat-media">
+                    <article class="media-short space-quote">
                         <p class="card-kicker">Atmosphere</p>
                         <h3>Less clutter. More intent.</h3>
-                        <p>Every visual zone is meant to calm the noise, elevate focus, and make showing up feel premium.</p>
+                        <p>Every visual zone is meant to calm the room, elevate focus, and make showing up feel premium.</p>
+                    </article>
+                    <article class="media-short space-gallery-secondary">
+                        <img src="assets/images/phoenix-recovery-generated.png" alt="Luxury recovery suite at Phoenix Fitness">
+                        <div class="space-tag-row">
+                            <span>Focus</span>
+                            <span>Flow</span>
+                            <span>Recovery</span>
+                        </div>
                     </article>
                 </div>
             </section>
@@ -147,27 +136,24 @@
                         <p class="eyebrow">Weekly Rhythm</p>
                         <h2>Your week should feel designed, not improvised.</h2>
                     </div>
-                    <p class="section-copy">
-                        Build around strength, layer in conditioning, and recover before you hit empty. This sample flow is how we help members stay powerful without burning out.
-                    </p>
                 </div>
                 <div class="schedule-grid">
-                    <article>
+                    <article class="schedule-card" tabindex="0" aria-expanded="false">
                         <p class="day-tag">Monday</p>
                         <h3>Lower strength</h3>
                         <p>Heavy compounds, unilateral work, and coached technique refinement.</p>
                     </article>
-                    <article>
+                    <article class="schedule-card" tabindex="0" aria-expanded="false">
                         <p class="day-tag">Wednesday</p>
                         <h3>Upper build</h3>
                         <p>Pressing, pulling, posture work, and smart volume for shape and power.</p>
                     </article>
-                    <article>
+                    <article class="schedule-card" tabindex="0" aria-expanded="false">
                         <p class="day-tag">Friday</p>
                         <h3>Conditioning lab</h3>
                         <p>Sprints, sled pushes, boxing rounds, and a short aggressive finisher.</p>
                     </article>
-                    <article>
+                    <article class="schedule-card" tabindex="0" aria-expanded="false">
                         <p class="day-tag">Weekend</p>
                         <h3>Reset and reload</h3>
                         <p>Mobility, recovery, open gym flow, and progress review with a coach.</p>
@@ -180,40 +166,51 @@
                     <p class="eyebrow">Membership</p>
                     <h2>Three ways in. One premium standard.</h2>
                 </div>
-                <div class="membership-grid">
-                    <article class="plan-card">
-                        <p class="plan-name">Starter</p>
-                        <h3>$19<span>/month</span></h3>
-                        <p class="plan-summary">For people ready to build consistency with a sharp, simple entry point.</p>
-                        <ul>
-                            <li>Open gym access</li>
-                            <li>One guided onboarding session</li>
-                            <li>Selected class booking</li>
-                        </ul>
-                        <button type="button" data-modal-target="join-popup">Join Starter</button>
-                    </article>
-                    <article class="plan-card featured-plan">
-                        <p class="plan-name">Momentum</p>
-                        <h3>$49<span>/month</span></h3>
-                        <p class="plan-summary">Our best balance of training, structure, energy, and accountability.</p>
-                        <ul>
-                            <li>Unlimited classes</li>
-                            <li>Monthly coach review</li>
-                            <li>Nutrition and habit support</li>
-                        </ul>
-                        <button type="button" data-modal-target="join-popup">Choose Momentum</button>
-                    </article>
-                    <article class="plan-card">
-                        <p class="plan-name">Elite</p>
-                        <h3>$99<span>/month</span></h3>
-                        <p class="plan-summary">For members who want premium access, deeper support, and faster results.</p>
-                        <ul>
-                            <li>24/7 entry</li>
-                            <li>Recovery suite access</li>
-                            <li>Personal training credits</li>
-                        </ul>
-                        <button type="button" data-modal-target="join-popup">Go Elite</button>
-                    </article>
+                <div class="membership-carousel" data-plan-carousel>
+                    <div class="membership-mobile-controls" aria-label="Membership plan controls">
+                        <button class="plan-switch" type="button" data-plan-prev aria-label="Show previous plan">
+                            <span aria-hidden="true">&#8249;</span>
+                        </button>
+                        <p class="plan-mobile-status" data-plan-status aria-live="polite">Plan 1 of 3</p>
+                        <button class="plan-switch" type="button" data-plan-next aria-label="Show next plan">
+                            <span aria-hidden="true">&#8250;</span>
+                        </button>
+                    </div>
+                    <div class="membership-grid">
+                        <article class="plan-card">
+                            <p class="plan-name">Starter</p>
+                            <h3>$19<span>/month</span></h3>
+                            <p class="plan-summary">For people ready to build consistency with a sharp, simple entry point.</p>
+                            <ul>
+                                <li>Open gym access</li>
+                                <li>One guided onboarding session</li>
+                                <li>Selected class booking</li>
+                            </ul>
+                            <button type="button" data-modal-target="join-popup">Join Starter</button>
+                        </article>
+                        <article class="plan-card featured-plan">
+                            <p class="plan-name">Momentum</p>
+                            <h3>$49<span>/month</span></h3>
+                            <p class="plan-summary">Our best balance of training, structure, energy, and accountability.</p>
+                            <ul>
+                                <li>Unlimited classes</li>
+                                <li>Monthly coach review</li>
+                                <li>Nutrition and habit support</li>
+                            </ul>
+                            <button type="button" data-modal-target="join-popup">Choose Momentum</button>
+                        </article>
+                        <article class="plan-card elite-plan">
+                            <p class="plan-name">Elite</p>
+                            <h3>$99<span>/month</span></h3>
+                            <p class="plan-summary">For members who want premium access, deeper support, and faster results.</p>
+                            <ul>
+                                <li>24/7 entry</li>
+                                <li>Recovery suite access</li>
+                                <li>Personal training credits</li>
+                            </ul>
+                            <button type="button" data-modal-target="join-popup">Go Elite</button>
+                        </article>
+                    </div>
                 </div>
             </section>
 
@@ -221,15 +218,26 @@
                 <div class="visit-copy">
                     <p class="eyebrow">Visit Phoenix</p>
                     <h2>Come see the room. The difference is obvious in person.</h2>
-                    <div class="visit-list">
-                        <p><strong>Location</strong> Dubai, United Arab Emirates</p>
-                        <p><strong>Email</strong> phoenixfitgym@gmail.com</p>
-                        <p><strong>Phone</strong> +971 54 196 1094</p>
-                        <div class="hours-block">
-                            <p><strong>Hours</strong></p>
-                            <p>Monday - Thursday: 5:00 AM - 11:00 PM</p>
-                            <p>Friday: 6:00 AM - 10:00 PM</p>
-                            <p>Saturday - Sunday: 7:00 AM - 9:00 PM</p>
+                    <p class="visit-lead">
+                        Walk through the space, meet the team, and leave with a clear next step.
+                    </p>
+                    <div class="visit-meta">
+                        <p>Dubai, United Arab Emirates</p>
+                        <a href="mailto:phoenixfitgym@gmail.com">phoenixfitgym@gmail.com</a>
+                        <a href="tel:+971541961094">+971 54 196 1094</a>
+                    </div>
+                    <div class="visit-hours">
+                        <div class="visit-hours-row">
+                            <span>Mon - Thu</span>
+                            <strong>5:00 AM - 11:00 PM</strong>
+                        </div>
+                        <div class="visit-hours-row">
+                            <span>Friday</span>
+                            <strong>6:00 AM - 10:00 PM</strong>
+                        </div>
+                        <div class="visit-hours-row">
+                            <span>Sat - Sun</span>
+                            <strong>7:00 AM - 9:00 PM</strong>
                         </div>
                     </div>
                 </div>
@@ -283,24 +291,17 @@
     <div class="modal" id="login-popup" aria-hidden="true">
         <div class="modal-panel">
             <button class="modal-close" type="button" aria-label="Close login modal">&times;</button>
-            <iframe src="pages/login.html" title="Login form"></iframe>
-        </div>
-    </div>
-
-    <div class="modal" id="signup-popup" aria-hidden="true">
-        <div class="modal-panel">
-            <button class="modal-close" type="button" aria-label="Close signup modal">&times;</button>
-            <iframe src="pages/signup.html" title="Signup form"></iframe>
+            <iframe src="pages/member-login-modal.html" title="Login form"></iframe>
         </div>
     </div>
 
     <div class="modal" id="join-popup" aria-hidden="true">
         <div class="modal-panel">
             <button class="modal-close" type="button" aria-label="Close join modal">&times;</button>
-            <iframe src="pages/join.html" title="Membership join form"></iframe>
+            <iframe src="pages/trial-booking-modal.html" title="Membership join form"></iframe>
         </div>
     </div>
 
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/landing-page.js"></script>
 </body>
 </html>
